@@ -509,6 +509,7 @@ button {
 }
 
 .footer {
+  position: relative;
   padding: 0 24px 164px;
   background: url("/assets/bg-footer-squiggle.svg");
   background-repeat: no-repeat;
