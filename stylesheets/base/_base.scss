@@ -15,29 +15,6 @@ html {
 
 body {
   background-color: $vdkBlue;
-
-  &::before {
-    position: absolute;
-    z-index: 2;
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 100%;
-    content: "";
-    background-image: url('/bgmatch/Mobile.jpg');
-    background-size: contain;
-    opacity: 0;
-    pointer-events: none;
-
-    @include break-up(medium) {
-        background-image: url('/bgmatch/Tablet.jpg');
-    }
-
-    @include break-up(large) {
-        background-image: url('/bgmatch/Desktop.jpg');
-    }
-}
-
 }
 
 .highlight-teal {
