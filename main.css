@@ -12,29 +12,6 @@ html {
 body {
   background-color: #080c21;
 }
-body::before {
-  position: absolute;
-  z-index: 2;
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 100%;
-  content: "";
-  background-image: url("/bgmatch/Mobile.jpg");
-  background-size: contain;
-  opacity: 0;
-  pointer-events: none;
-}
-@media (min-width: 641px) {
-  body::before {
-    background-image: url("/bgmatch/Tablet.jpg");
-  }
-}
-@media (min-width: 1025px) {
-  body::before {
-    background-image: url("/bgmatch/Desktop.jpg");
-  }
-}
 
 .highlight-teal {
   color: #3eeae7;
