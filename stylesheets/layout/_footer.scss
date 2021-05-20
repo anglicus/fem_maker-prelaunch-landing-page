@@ -1,0 +1,96 @@
+@use "../abstracts/colors" as *;
+@use "../abstracts/mixins" as *;
+
+.footer {
+  padding: 0 24px 164px;
+
+  background: url('/assets/bg-footer-squiggle.svg');
+  background-repeat: no-repeat;
+  background-position: center top;
+  background-size: (584 / 375) * 100% auto;
+
+  @include break-up(medium) {
+    background-position: 94% top;
+    background-size: (1022 / 768) * 100% auto;
+
+    padding: 17px 144px 119px;
+  }
+
+  @include break-up(large) {
+    background-position: right top;
+    background-size: (1664.13 / 1440) * 100% auto;
+    padding: 17px (482 / 1440) * 100% 119px;;
+  }
+
+  &__heading {
+    text-align: center;
+    padding: 0 12% 0;
+
+    @include break-up(large) {
+      padding: 35px 0 0 8px;
+    }
+
+  }
+
+  &__email-form {
+    position: relative;
+    margin-top: 31px;
+
+    @include break-up(medium) {
+      margin-top: 29px;
+
+      display: flex;
+      flex-direction: row;
+    }
+    
+    @include break-up(large) {
+      margin-top: 42px;
+    }
+  }
+
+  &__input {
+    
+    @include break-up(medium) {
+     // width: calc(100% - 9.8rem);
+    }
+  }
+
+  &__button {
+    margin-top: 24px;
+
+    @include break-up(medium) {
+      margin-top: 0;
+      margin-left: 16px;
+    }
+  }
+
+  &__email-error {
+    display: none;
+    position: absolute;
+    bottom: -36px;
+    left: 0;
+    padding-left: 1.125rem;
+
+    &.show-error {
+      display: block;
+    }
+
+    @include break-up(medium) {
+      bottom: -26px;
+    }
+  }
+
+  &__attribution {
+    position: absolute;
+    bottom: 16px;
+    left: 50%;
+    transform: translateX(-50%);
+
+    font-size: 0.75rem;
+
+    a {
+      color: $teal;
+      text-decoration: none;
+    }
+  }
+}

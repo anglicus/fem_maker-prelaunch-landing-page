@@ -1,0 +1,80 @@
+@use "../abstracts/colors" as *;
+@use "../abstracts/mixins" as *;
+
+.header {
+  
+  background: url("/assets/illustration-hero-mobile.png");
+  background-repeat: no-repeat;
+  background-position: left 99.5px;
+  background-size: 410px auto;
+
+  margin: 40px 0 0;
+  padding: 0 24px 0;
+
+  text-align: center;
+
+  @include break-up(medium) {
+    background: url("/assets/illustration-hero-left.svg"), url("/assets/bg-hero-squiggle.svg"), url("/assets/illustration-hero-right.svg");
+    background-repeat: no-repeat, no-repeat, no-repeat;
+    background-position: -37% 113.5px, center 145px, 138%  113.5px;
+    background-size: (314 / 768) * 100% auto, (386 / 768) * 100% auto, (317 / 768) * 100% auto,;
+    margin: 48px 0 0;
+    padding: 0 39px 52px;
+  }
+
+  @include break-up(large) {
+    background-position: -37% 113.5px, center 130px, 138%  113.5px;
+    background-size: (408 / 1440) * 100% auto, (544 / 1440) * 100% auto, (396 / 1440) * 100% auto,;
+
+    margin: 81px 0 0;
+    padding: 0 165px 70px;
+  }
+
+  &__logo {
+    display: block;
+    margin: auto;
+
+    @include break-up(medium);
+    margin: 0;
+
+  }
+
+  &__title {
+    margin-top: 346px;
+    padding: 0 12% 0;
+
+    @include break-up(medium) {
+      margin-top: 128px;
+      padding: 0 22% 0;
+    }
+
+    @include break-up(large) {
+      margin-top: 185px;
+      padding: 0 24% 0;
+    }
+
+  }
+
+  &__intro {
+    margin-top: 24px;
+
+    @include break-up(medium) {
+      padding: 0 17% 0;
+    }
+
+    @include break-up(large) {
+      padding: 0 26% 0;
+    }
+
+  }
+
+  &__icon-scroll {
+    display: block;
+    margin: 32px auto 0;
+
+    @include break-up(large) {
+      margin-top: 65px;
+    }
+  }
+
+}

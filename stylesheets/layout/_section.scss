@@ -1,0 +1,321 @@
+@use "../abstracts/colors" as *;
+@use "../abstracts/mixins" as *;  
+
+.section {
+
+
+  &-features {
+    margin: 144px 24px 0;
+
+    @include break-up(medium) {
+      margin: 110px 98px 0;
+    }
+
+    @include break-up(large) {
+      margin: 202px (165 / 1440) * 100% 0;
+      display: flex;
+      flex-direction: row;
+      align-items: flex-start;
+      justify-content: space-between;
+    }
+
+
+    &__feature {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      text-align: center;
+
+      &:not(:first-child) {
+        margin-top: 56px;
+      }
+
+      @include break-up(medium) {
+        display: flex;
+        flex-direction: row;
+
+        text-align: left;
+
+        &:nth-child(odd) {
+          margin-left: 58px;
+        }
+
+        &:nth-child(even) {
+          margin-right: 58px;
+        }
+
+        &:not(:first-child) {
+          margin-top: 39.5px;
+        }
+      }
+
+      @include break-up(large) {
+        flex-direction: column;
+        align-items: flex-start;
+
+        &:nth-child(odd) {
+          margin-left: 0;
+        }
+
+        &:not(:first-child) {
+          margin-top: 0;
+        }
+
+        &:nth-child(even) {
+          margin-right: 0;
+          margin-top: 48px;
+        }
+      }
+
+    }
+
+    &__icon-wrapper {
+      position: relative;
+      width: 120px;
+      height: 124px;
+      background-color: $medBlue;
+      border-radius: 45px;
+
+      flex-shrink: 0;
+
+      @include break-up(large) {
+        width: 160px;
+        height: 164px
+      }
+    }
+
+    &__icon {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background-color: $medBlue;
+
+      &--passions {
+        width: 66px;
+        height: 80px;
+        left: 52.5%;
+      }
+
+      &--freedom {
+        width: 56px;
+        height: 67px;
+      }
+
+      &--lifestyle {
+        width: 60px;
+        height: 71px;
+      }
+
+      &--anywhere {
+        width: 78px;
+        height: 56px;
+      }
+
+      @include break-up(large) {
+        &--passions {
+          width: 88px;
+          height: 106px;
+          left: 52.5%;
+        }
+  
+        &--freedom {
+          width: 74px;
+          height: 89px;
+        }
+  
+        &--lifestyle {
+          width: 80px;
+          height: 94px;
+        }
+  
+        &--anywhere {
+          width: 104px;
+          height: 74px;
+        }
+      }
+
+    }
+
+    &__text-wrapper {
+      
+      @include break-up(medium) {
+        margin-left: 55px;
+      }
+
+      @include break-up(large) {
+        margin: 48px 0 0;
+        width: 255px;
+      }
+    }
+
+    &__feature-title {
+      margin: 32px 0 11px;
+
+      @include break-up(medium) {
+        margin: 0 0 11px;
+      }
+
+      @include break-up(large) {
+        margin: 0 0 23px;
+      }
+    }
+
+  }
+
+  &-pricing {
+    margin: 144px 24px 145px;
+
+    @include break-up(medium) {
+      margin: 141px 98px 119px;
+    }
+
+    @include break-up(large) {
+      margin: 202px auto 151px;
+      display: grid;
+      grid-template-areas: 
+        "intro intro"
+        "free paid";
+      column-gap: 30px;
+    }
+
+      &__intro {
+
+        text-align: center;
+   
+        &__summary {
+          margin-top: 27px;
+
+          @include break-up(large) {
+            margin-top: 23px;
+            padding: 0 30% 0; 
+          }
+
+        }
+
+        @include break-up(large) {
+          grid-area: intro;
+        }
+
+      }
+    
+      &__free {
+        position: relative;
+        margin-top: 79px;
+        padding: 49px 30px 32px;
+        background-color: $medBlue;
+        border-radius: 8px;
+
+        text-align: left;
+
+        @include break-up(medium) {
+          margin: 79px 63px 0;
+          padding: 49px 38px 48px;
+        }
+
+        @include break-up(large) {
+          grid-area: free;
+          justify-self: end;
+          width: 445px;
+          margin: 117px 0 12px;
+        }
+
+        &__icon {
+          position: absolute;
+          top: -23px;
+          left: 8.5%;
+        }
+
+        &__summary {
+          margin-top: 19px;
+          color: white;
+          opacity: 0.6;
+        }
+
+        &__price {
+          margin-top: 41px;
+          color: white;
+
+          @include break-up(medium) {
+            margin-top: 39px;
+          }
+
+        }
+
+        &__features {
+          margin-top: 24px;
+          list-style-image: url('/assets/icon-check-teal.svg');
+          color: white;
+        }
+
+      }
+
+      &__paid {
+        position: relative;
+        margin-top: 65px;
+        padding: 61px 30px 32px;
+        background-color: $teal;
+        border-radius: 8px;
+
+        text-align: left;
+
+        @include break-up(medium) {
+          margin: 65px 63px 0;
+          padding: 61px 38px 60px;
+        }
+
+        @include break-up(large) {
+          grid-area: paid;
+          justify-self: start;
+          width: 445px;
+          margin: 105px 0 0;
+        }
+
+        &__icon {
+          position: absolute;
+          top: -33px;
+          left: 37px;
+        }
+
+        &__heading {
+          color: $vdkBlue;
+        }
+
+        &__summary {
+          margin-top: 19px;
+          color: $vdkBlue;
+          opacity: 0.6;
+        }
+
+        &__price {
+          position: relative;
+          margin-top: 41px;
+          color: $vdkBlue;
+
+          @include break-up(medium) {
+            margin-top: 39px;
+          }
+
+          .per-month {
+            position: relative;
+            bottom: 10px;
+            left: 9px;
+            opacity: 0.6;
+          }
+        }
+
+        &__features {
+          margin-top: 23px;
+          list-style-image: url('/assets/icon-check.svg');
+          color: $vdkBlue;
+
+          @include break-up(large) {
+            margin-top: 25px;
+          }
+        }
+
+      }
+  }
+
+}
